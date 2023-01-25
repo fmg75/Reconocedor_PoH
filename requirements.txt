@@ -1,3 +1,3 @@
 streamlit
-torch==1.8.1
-facenet_pytorch==1.2
+torch==1.13.1
+facenet_pytorch==2.5.2
