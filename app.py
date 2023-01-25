@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image   
 from utils import *
 
-st.title('Reconocedor')
+st.title('Reconocedor_PoH')
 
 def process_image(path):
     face_net_models = FaceNetModels()
