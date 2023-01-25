@@ -16,7 +16,7 @@ def upload_image():
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         #st.image(image, caption='Imagen subida', use_column_width=True)
-        st.image(image, caption='Imagen subida', width=300)
+        st.image(image, caption='Imagen subida', width=200)
         label, distance = process_image(uploaded_file)
 
         url = f"https://www.proofofhumanity.org/profile/{label}"
