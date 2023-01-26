@@ -12,7 +12,7 @@ def process_image(path):
     return distancia[0][0],distancia[1][0]
 
 def upload_image():
-    uploaded_file = st.file_uploader("Subir la imagen de un Humano y se verificara si esta registrado en https://www.proofofhumanity.org/", type=["jpg", "png"])
+    uploaded_file = st.file_uploader("Subir la imagen de un Humano y se verificar si esta registrado en https://www.proofofhumanity.org/", type=["jpg", "png"])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         #st.image(image, caption='Imagen subida', use_column_width=True)
@@ -21,6 +21,6 @@ def upload_image():
 
         url = f"https://www.proofofhumanity.org/profile/{label}"
         st.markdown(f'<a href="{url}" target="_blank">https://www.proofofhumanity.org/profile/{label}</a>', unsafe_allow_html=True)
-        st.write("Distancia Euclidiana: ", distance)
+        st.write("Distancia Euclidiana: ", round(distance,4))
 
 upload_image()

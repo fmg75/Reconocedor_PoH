@@ -9,8 +9,8 @@ class FaceNetModels:
         with open('caracteristica_16K.pkl', "rb") as f:
             self.caracteristicas = pickle.load(f)
 
-    def embedding(self,img):
-        img_embedding = self.model(img.unsqueeze(0))
+    def embedding(self,img_tensor):
+        img_embedding = self.model(img_tensor.unsqueeze(0))
         return img_embedding
 
     def Distancia (self,img_embedding):
