@@ -13,10 +13,10 @@ from utils import *
 st.title('Esta Registrado en PoH ?')
 
 def process_image(path):
-    face_net_models = FaceNetModels()
+    _models = FaceNetModels()
     img = Image.open(path)
-    image_embedding = face_net_models.embedding(face_net_models.mtcnn(img))
-    distancia = face_net_models.Distancia(image_embedding)
+    image_embedding = _models.embedding(_models.mtcnn(img))
+    distancia = _models.Distancia(image_embedding)
     return distancia[0][0],distancia[1][0]
 
 def upload_image():
