@@ -1,5 +1,5 @@
 import torch
-from facenet_pytorch import MTCNN, InceptionResnetV1
+from facenet_pytorch import MTCNN
 import pickle
 
 class FaceNetModels:
