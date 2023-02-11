@@ -26,6 +26,6 @@ def upload_image():
             st.markdown(f'<a href="{url}" target="_blank">https://www.proofofhumanity.org/profile/{label}</a>', unsafe_allow_html=True)
             st.write("Distancia Euclidiana: ", round(distance,4))
         else:
-            st.write("Algo falló con la imagen, intenta con otra !!")
+            st.write("Algo falló con la imagen proporcionada, intenta con otra !!")
 
 upload_image()
