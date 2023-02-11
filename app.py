@@ -1,16 +1,8 @@
 import streamlit as st
 from PIL import Image   
 from utils import *
-#import base64
 
-# Logo PoH
-#with open("logos/democratic-poh-logo-white.svg", "rb") as image_file:
-#    logo_b64 = base64.b64encode(image_file.read()).decode()
-#st.markdown(f'<img src="data:image/svg+xml;base64,{logo_b64}" style="float:right;">', unsafe_allow_html=True)
-
-
-
-st.title('Esta Registrado en PoH ?')
+st.title('Registrado en Proof of Humanity?')
 
 def process_image(path):
     try:
