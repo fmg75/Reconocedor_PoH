@@ -31,10 +31,11 @@ def upload_image():
  # información adicional
     with st.expander('Información adicional'):
          st.write('Esta aplicación utiliza el modelo de redes neuronales conocido como ResNet '+
-                 'para reconocer características de rostros en imágenes. Con esta tecnología se construyó un diccionario para luego comparar con las imágenes ingresadas por el usuario. '+     
+                 'para reconocer características de rostros en imágenes. Con esta tecnología se construyó un diccionario que la app utiliza ' + 
+                 'para comparar con las caracteristicas del rostro ingresadas por el usuario. '+     
                  'El usuario puede subir una imagen desde su dispositivo o utilizar la cámara para tomar una foto, y la aplicación '+ 
-                 'devolverá el rostro más similar de la base de datos junto con la distancia euclidiana entre las dos imágenes.' +
-                 ' Si el Humano esta registrado el rostro sera reconocido en correspondencia con una distacia euclidiana muy baja.'
+                 'devolverá el perfil de PoH más similar al de la base de datos junto con la distancia euclidiana entre los dos rostros.' +
+                 ' Si la imagen corresponde a un humano registrado el rostro sera reconocido en correspondencia con una distacia euclidiana muy baja, proxima a cero.'
                  ' Por el momento se reconocen 16K de registrados en PoH, la base de datos se ira actualizando cada mil registrados nuevos.') 
 
 upload_image()
