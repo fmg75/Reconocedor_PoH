@@ -2,7 +2,8 @@ import streamlit as st
 from PIL import Image   
 from utils import *
 
-st.title('Registrado en Proof of Humanity?')
+#Titulo en color verde
+st.markdown("<h1 style='color: green;'>Registrado en Proof of Humanity?</h1>", unsafe_allow_html=True)
 
 def process_image(path):
     try:
