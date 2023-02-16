@@ -2,6 +2,13 @@ import streamlit as st
 from PIL import Image   
 from utils import *
 
+# cargar la imagen desde un archivo en tu sistema de archivos
+logo = Image.open('logos/democratic-poh-logo-text-hi-res-p-500.png')
+
+# mostrar la imagen en Streamlit
+st.image(logo, use_column_width=True)
+
+
 #Titulo en color verde
 st.markdown("<h1 style='color: green;'>Registrado en Proof of Humanity?</h1>", unsafe_allow_html=True)
 
