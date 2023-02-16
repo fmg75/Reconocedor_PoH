@@ -5,6 +5,7 @@ from utils import *
 #Titulo en color verde
 st.markdown("<h1 style='color: green;'>Registrado en Proof of Humanity?</h1>", unsafe_allow_html=True)
 
+#definicion de las funciones principales
 def process_image(path):
     try:
         _models = FaceNetModels()
@@ -33,10 +34,10 @@ def upload_image():
     with st.expander('Información adicional'):
          st.write('Esta aplicación utiliza el modelo de redes neuronales conocido como ResNet '+
                  'para reconocer características de rostros en imágenes. Con esta tecnología se construyó un diccionario que la app utiliza ' + 
-                 'para comparar con las caracteristicas del rostro ingresadas por el usuario. '+     
+                 'para comparar con las características del rostro ingresadas por el usuario. '+     
                  'El usuario puede subir una imagen desde su dispositivo o utilizar la cámara para tomar una foto, y la aplicación '+ 
                  'devolverá el perfil de PoH más similar al de la base de datos junto con la distancia euclidiana entre los dos rostros.' +
-                 ' Si la imagen corresponde a un humano registrado el rostro sera reconocido en correspondencia con una distacia euclidiana muy baja, proxima a cero.'
+                 ' Si la imagen corresponde a un humano registrado el rostro será reconocido en correspondencia con una distancia euclidiana muy baja, próxima a cero.'
                  ' Por el momento se reconocen 16K de registrados en PoH, la base de datos se ira actualizando cada mil registrados nuevos.') 
 
 upload_image()
