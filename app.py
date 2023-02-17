@@ -46,7 +46,7 @@ def upload_image():
                  'El usuario puede subir una imagen desde su dispositivo o utilizar la cámara para tomar una foto, y la aplicación '+ 
                  'devolverá el perfil de PoH más similar al de la base de datos junto con la distancia euclidiana entre los dos rostros.' +
                  ' Si la imagen corresponde a un humano registrado el rostro será reconocido en correspondencia con una distancia euclidiana muy baja, próxima a cero.'
-                 ' Por el momento se reconocen 16 mil de registrados en PoH, la base de datos se ira actualizando cada mil registrados nuevos.') 
+                 ' Por el momento se reconocen 16 mil registrados en PoH, la base de datos se ira actualizando cada mil registrados nuevos.') 
 
 #lanza app
 upload_image()
