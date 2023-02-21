@@ -1,11 +1,11 @@
 import torch
-from facenet_pytorch import MTCNN
+from facenet_pytorch import MTCNN, InceptionResnetV1
 import pickle
 
 class FaceNetModels:
     def __init__(self):
-        #self.model = InceptionResnetV1(pretrained='vggface2').eval()
-        self.model = torch.jit.load('model_resnet.pt')
+        self.model = InceptionResnetV1(pretrained='vggface2').eval()
+        #self.model = torch.jit.load('model_resnet.pt')
         self.mtcnn = MTCNN(min_face_size = 50, keep_all = False)
         with open('caracteristica_16K.pkl', "rb") as f:
             self.caracteristicas = pickle.load(f)
