@@ -16,24 +16,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# definicion de las funciones principales
-# def process_image(path):
-#     try:
-#         _models = FaceNetModels()
-#         img = Image.open(path)
-#         image_embedding = _models.embedding(_models.mtcnn(img))
-#         distancia = _models.Distancia(image_embedding)
-#         return distancia[0][0],distancia[1][0]
-#     except:
-#         return None
-
 
 def process_image(path):
     try:
         _models = FaceNetModels()
         img = Image.open(path)
         image_embedding = _models.embedding(_models.mtcnn(img))
-        # distancia = _models.Distancia(image_embedding)
         return _models.Distancia(image_embedding)
     except:
         return None
