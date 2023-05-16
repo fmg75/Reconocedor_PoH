@@ -38,9 +38,9 @@ def upload_image():
         result = process_image(uploaded_file)
         if result:
             label, distance = result
-            url = f"https://proofofhumanity.org/profile/{label}"
+            url = f"https://app.proofofhumanity.id/profile/{label}"
             st.markdown(
-                f'<a href="{url}" target="_blank">https://proofofhumanity.org/profile/{label}</a>',
+                f'<a href="{url}" target="_blank">https://app.proofofhumanity.id/profile/{label}</a>',
                 unsafe_allow_html=True,
             )
             st.write("Distancia Euclidiana: ", round(distance, 4))
