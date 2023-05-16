@@ -12,7 +12,7 @@ st.image(logo, use_column_width=True)
 
 # Titulo en color verde
 st.markdown(
-    "<h1 style='color: green;'>Registrado en Proof of Humanity?</h1>",
+    "<h1 style='color: green;'>Registered with Proof of Humanity?</h1>",
     unsafe_allow_html=True,
 )
 
@@ -29,12 +29,12 @@ def process_image(path):
 
 def upload_image():
     uploaded_file = st.file_uploader(
-        "Subir la imagen de un Humano y verificar si esta registrado en https://proofofhumanity.org/",
+        "Upload the image of a Human and verify if it is registered in https://app.proofofhumanity.id/",
         type=["jpg", "png"],
     )
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Imagen subida ", width=200)
+        st.image(image, caption="uploaded image ", width=200)
         result = process_image(uploaded_file)
         if result:
             label, distance = result
@@ -43,20 +43,22 @@ def upload_image():
                 f'<a href="{url}" target="_blank">https://app.proofofhumanity.id/profile/{label}</a>',
                 unsafe_allow_html=True,
             )
-            st.write("Distancia Euclidiana: ", round(distance, 4))
+            st.write("Euclidean Distance: ", round(distance, 4))
         else:
-            st.write("Algo falló con la imagen proporcionada, intenta con otra !!")
+            st.write(
+                "Something went wrong with the provided image, please try another!!"
+            )
 
     # información adicional
     with st.expander("Información adicional"):
         st.write(
-            "Esta aplicación utiliza el modelo de redes neuronales conocido como ResNet "
-            + "para reconocer características de rostros en imágenes. Con esta tecnología se construyó un diccionario que la app utiliza "
-            + "para comparar con las características del rostro ingresado por el usuario. "
-            + "El usuario puede subir una imagen desde su dispositivo o utilizar la cámara para tomar una foto, y la aplicación "
-            + "devolverá el perfil de PoH más similar al de la base de datos junto con la distancia euclidiana entre los dos rostros."
-            + " Si la imagen corresponde a un humano registrado el rostro será reconocido en correspondencia con una distancia euclidiana muy baja, próxima a cero."
-            " Por el momento se reconocen 16 mil registrados en PoH, la base de datos se ira actualizando cada mil registrados nuevos."
+            "This application uses the neural network model known as ResNet"
+            + "to recognize features of faces in images. With this technology, a dictionary was built that the app uses "
+            + "to compare with the features of the face entered by the user. "
+            + "The user can upload an image from their device or use the camera to take a photo, and the application "
+            + "will return the closest PoH profile to the one in the database along with the Euclidean distance between the two faces."
+            + "If the image corresponds to a registered human, the face will be recognized in correspondence with a very low Euclidean distance, close to zero."
+            "At the moment 17 thousand registered in PoH are recognized, the database will be updated every thousand new registered."
         )
 
 
