@@ -1,4 +1,5 @@
 import streamlit as st
+import io
 from PIL import Image
 from utils import *
 
@@ -21,6 +22,23 @@ def process_image(path):
     try:
         _models = FaceNetModels()
         img = Image.open(path)
+
+        # Verificar si la imagen está en formato PNG y convertir a JPG si es necesario
+        if img.format == "PNG":
+            jpg_io = (
+                io.BytesIO()
+            )  # Crear un objeto BytesIO para guardar la imagen en memoria
+            img = img.convert(
+                "RGB"
+            )  # Convertir a modo RGB (requerido para guardar como JPG)
+            img.save(
+                jpg_io, format="JPEG"
+            )  # Guardar la imagen en el objeto BytesIO en formato JPG
+            jpg_io.seek(0)  # Colocar el puntero de lectura al inicio del objeto BytesIO
+            img = Image.open(
+                jpg_io
+            )  # Abrir la imagen en formato JPG desde el objeto BytesIO
+
         image_embedding = _models.embedding(_models.mtcnn(img))
         return _models.Distancia(image_embedding)
     except:
@@ -32,6 +50,7 @@ def upload_image():
         "Upload the image of a Human and verify if it is registered in https://app.proofofhumanity.id/",
         type=["jpg", "png"],
     )
+    print(uploaded_file)
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         st.image(image, caption="uploaded image ", width=200)
