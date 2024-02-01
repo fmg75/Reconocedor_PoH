@@ -62,7 +62,7 @@ def upload_image():
                 f'<a href="{url}" target="_blank">https://app.proofofhumanity.id/profile/{label}</a>',
                 unsafe_allow_html=True,
             )
-            st.write("% Similitud: ", int(100- 14,28*distance))
+            st.write("% Similitud: ", int(100- 14.28*distance))
         else:
             st.write(
                 "Something went wrong with the provided image, please try another!!"
